@@ -1,7 +1,7 @@
 # Spam
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.5. It was designed by Kursk regional
-department of Social Insuarance Fond.
+department of Social Insurance Fond.
 
 ## Development server
 
