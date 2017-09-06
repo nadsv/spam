@@ -1,0 +1,20 @@
+<h2>Фильтры</h2>
+<ul class="nav nav-tabs">
+  <li *ngFor="let dir of directories; let i = index"
+  		routerLink="/catalog" routerLinkActive="active"
+  			[ngClass]="{'active': activeDirectory == i}"
+	     	(click)="onDirectoryClick(i)">
+  <a>{{dir}}</a>
+  </li>
+</ul>
+<br>
+<div class="filter">
+	<div class="list-group">
+	  <li *ngFor="let quiery of quieries; let i = index" 
+	     class="list-group-item" 
+	     [ngClass]="{'active': activeQuery == i}"
+	     (click)="onQueryClick(i)">
+	  	<p class="list-group-item-text">{{quiery}}</p>
+	  </li>
+	</div>
+</div>

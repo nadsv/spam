@@ -1,0 +1,21 @@
+.wrapper {
+	overflow-y: auto;
+	height: 350px;
+}
+
+.shadule_row {
+	cursor: pointer;
+}
+
+.shadule_row__active {
+	color: #0275d8; 
+}
+
+.list {
+	overflow-y: auto;
+	height: 176px;
+}
+
+li {
+	cursor: pointer;
+}

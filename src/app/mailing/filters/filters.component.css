@@ -1,0 +1,9 @@
+.filter {
+	height: 250px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+li {
+	cursor: pointer;
+}

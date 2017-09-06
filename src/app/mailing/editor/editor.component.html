@@ -1,0 +1,7 @@
+<h2>Текст сообщения</h2>
+<select class="subjects" (change)="onChangeSubject($event)">
+	<option></option>
+	<option *ngFor="let subject of subjects">{{subject}}</option>
+</select>
+<hr>
+<textarea class="form-control massage" rows="10" (change)="onChangeText($event)" [value]="text"></textarea>

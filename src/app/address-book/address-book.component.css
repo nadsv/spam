@@ -1,0 +1,15 @@
+.icon {
+	display: block;
+	width: 70px;
+	height: 70px;
+	cursor: pointer;
+	padding: 3px;
+}
+
+.icon:hover {
+	padding: 0;
+}
+
+.icon-wrapper {
+	margin-bottom: 20px;
+}

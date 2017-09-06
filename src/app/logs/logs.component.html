@@ -1,0 +1,27 @@
+<div class="col-md-2"></div>
+<div class="col-md-8">
+	<h2 class="text-center">Отправленные рассылки</h2>
+	<table class="table table-bordered">
+		<tr>
+			<th class="text-center">#</th>
+			<th class="text-center">Фильтр</th>
+			<th class="text-center">Адресная книга</th>
+			<th class="text-center">Сообщение</th>
+		</tr>
+		<tr *ngFor="let letter of letters; let i = index;">
+			<td>Рассылка №{{ letter.index }}</td>
+			<td>{{letter.filter}}</td>
+			<td class="text-center">
+				<a class="center-block" href="{{spamAPI.dataUrl+letter.index+'/'+letter.addressBook}}" download>
+					Скачать
+				</a>
+			</td>
+			<td class="text-center">
+				<a class="center-block" href="{{spamAPI.dataUrl+letter.index+'/'+letter.message}}" download>
+					Скачать
+				</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="col-md-2"></div>

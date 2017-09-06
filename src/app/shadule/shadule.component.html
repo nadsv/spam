@@ -1,0 +1,81 @@
+<div class="row">
+	<form>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+		        	<label for="name">Фильтр</label>
+					<div class="list">
+						<div class="list-group">
+						  <li *ngFor="let fltr of filters; let i = index" 
+						     class="list-group-item" 
+						     [ngClass]="{'shadule_row__active': fltr == filter, 'active': activeFilter == i}"
+						     (click)="onFilterClick(i)">
+						  	<p class="list-group-item-text">{{fltr}}</p>
+						  </li>
+						</div>
+					</div>
+		    	</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+		        	<label for="name">Тема</label>
+					<div class="list">
+						<div class="list-group">
+						  <li *ngFor="let subj of subjects; let i = index" 
+						     class="list-group-item" 
+						     [ngClass]="{'shadule_row__active': subj == subject, 'active': activeSubject == i}"
+						     (click)="onSubjectClick(i)">
+						  	<p class="list-group-item-text">{{subj}}</p>
+						  </li>
+						</div>
+					</div>
+		    	</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+			        <label for="name">Дни (в формате dd.mm через запятую)</label>
+			        <textarea class="form-control massage" rows="8" id="text" name="days" required [(ngModel)]="days"></textarea>
+			    </div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="text-center">
+				<button type="submit" class="btn btn-default" (click)="Update((activeItem !== null) ? 'update' : 'insert')">
+		      		{{(activeItem !== null) ? 'Изменить рассылку №' + (activeItem + 1) : 'Добавить новую рассылку'}}
+		    	</button>
+		    	<button type="button" class="btn btn-default" (click)="Clear()">
+		      		Сбросить
+		    	</button>
+		    	<button *ngIf="activeItem !== null" type="button" class="btn btn-default" (click)="Update('delete')">
+		      		Удалить
+		    	</button>
+	    	</div>
+	    </div>
+	</form>
+</div>
+<hr>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-xs-12">
+	<div class="row">
+		<div class="wrapper">
+			<table class="table table-bordered">
+				<tr>
+					<th class="text-center">#</th>
+					<th class="text-center">Фильтр</th>
+					<th class="text-center">Тема</th>
+					<th class="text-center">Дни</th>
+				</tr>
+				<tr *ngFor="let item of shadule; let i = index;" 
+				    class="shadule_row" 
+				    (click)="SelectRow(i)"
+					[ngClass]="{'shadule_row__active': activeItem == i}"
+				    >
+					<td>{{i+1}}</td>
+					<td>{{item.sql}}</td>
+					<td>{{item.text}}</td>
+					<td>{{item.days.join(', ')}}</td>
+				<tr>
+			</table>
+		</div>
+	</div>
+</div>

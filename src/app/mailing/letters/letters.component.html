@@ -1,0 +1,41 @@
+<div class="col-md-2"></div>
+<div class="col-md-8">
+	<div *ngIf="letters.length>0">
+	<h2 class="text-center">Неотправленные рассылки</h2>
+	<table class="table table-bordered">
+		<tr>
+			<th class="text-center">#</th>
+			<th class="text-center">Фильтр</th>
+			<th class="text-center">Адресная книга</th>
+			<th class="text-center">Сообщение</th>
+			<th class="text-center">Удалить</th>
+		</tr>
+		<tr *ngFor="let letter of letters; let i = index;">
+			<td>Рассылка №{{ letter.index }}</td>
+			<td>{{letter.filter}}</td>
+			<td class="text-center">
+				<a class="icon center-block" href="{{mailing.lettersUrl+letter.index+'/'+letter.addressBook}}" download>
+					<svg viewBox="0 0 16 16">
+							<use xlink:href="#address-book"></use>
+					</svg> 
+				</a>
+			</td>
+			<td class="text-center">
+				<a class="icon center-block" href="{{mailing.lettersUrl+letter.index+'/'+letter.message}}" download>
+					<svg viewBox="0 0 16 16">
+							<use xlink:href="#message"></use>
+					</svg> 
+				</a>
+			</td>
+			<td class="text-center">
+				<div class="icon center-block" (click)="onDelete( i )">
+					<svg viewBox="0 0 16 16">
+							<use xlink:href="#delete"></use>
+					</svg> 
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+</div>
+<div class="col-md-2"></div>

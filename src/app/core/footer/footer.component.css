@@ -1,0 +1,11 @@
+.footer {
+	height: 40px;
+}
+
+.created-by {
+	float: right;
+	font-size: 0.7em;
+	margin: 0;
+	line-height: 40px;
+	padding-right: 10px;
+}

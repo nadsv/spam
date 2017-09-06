@@ -1,0 +1,11 @@
+.logo {
+	position: absolute;
+}
+
+.navbar-brand__position {
+	margin-top: -5px;
+}
+
+.title {
+	padding-left: 70px;
+}

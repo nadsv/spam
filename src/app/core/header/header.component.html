@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a class="navbar-brand" routerLink="{{ mainLink() }}">
+        <div class="logo">
+          <img src="./assets/spam64.png" width="64" height="64">
+        </div>
+        <span class="title">SPAM</span>
+      </a>
+    </div>
+    <div class="navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a [routerLink]="['/mailing']">Рассылка</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/logs']">Архив</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/subjects']">Темы</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/shadule']">Расписание</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/addressbook']">Адресная книга</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

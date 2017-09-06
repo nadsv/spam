@@ -1,0 +1,8 @@
+.wrapper {
+	height: 430px;
+	overflow-y: auto;
+}
+
+li {
+	cursor: pointer;
+}
